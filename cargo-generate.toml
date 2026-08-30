@@ -14,9 +14,6 @@ type = "string"
 prompt = "Frontend build output directory"
 default = "frontend/dist"
 
-[template]
-ignore = ["test.sh"]
-
 [hooks]
 pre = ["hooks/pre-hook.rhai"]
 
