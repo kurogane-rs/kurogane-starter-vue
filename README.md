@@ -25,23 +25,23 @@ cargo generate kurogane-rs/starter-vue --name my-app --define language=typescrip
 
 - Vue 3 entry point with Composition API
 - Vite with `@vitejs/plugin-vue`
-- `vite.config.ts` configured to build into `content/`
+- `vite.config.ts` configured to build into `frontend/dist`
 - Rust binary using the Kurogane runtime
 - `kurogane.toml` packaging configuration
 
 ## Development
 
 ```sh
-npm install
-npm run dev    # Start Vite dev server (port 5173)
-kurogane dev   # Launch the Kurogane desktop app
+npm --prefix frontend install
+npm --prefix frontend run dev  # Start Vite dev server (port 5173)
+kurogane dev                   # Launch the Kurogane desktop app
 ```
 
-## Building
+## Bundling
 
 ```sh
-npm run build     # Build frontend (includes vue-tsc for TypeScript)
-kurogane build    # Build the Rust binary
+npm --prefix frontend run build  # Build frontend (includes vue-tsc for TypeScript)
+kurogane bundle
 ```
 
 ## TypeScript vs JavaScript
