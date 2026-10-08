@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "{% if language == "typescript" %}vue-tsc -b && {% endif %}vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -12,8 +12,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5",
-    "typescript": "^5",
-    "vite": "^6",
-    "vue-tsc": "^2"
+{% if language == "typescript" %}    "typescript": "^5",
+{% endif %}    "vite": "^6"{% if language == "typescript" %},
+    "vue-tsc": "^2"{% endif %}
   }
 }
